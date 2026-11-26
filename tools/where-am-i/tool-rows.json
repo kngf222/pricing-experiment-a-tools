@@ -1,0 +1,56 @@
+{
+  "records": [
+    {
+      "payload": {
+        "kind": "ai-tool-descriptor",
+        "id": "tool:where-am-i",
+        "label": "Where am I (lane A)",
+        "job": "Say which computer, its addresses and process ran this lane A test tool",
+        "status": "active",
+        "input_schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "note": {
+              "type": "string"
+            }
+          }
+        },
+        "invoke": {
+          "kind": "computer",
+          "capabilities": [],
+          "files": {
+            "package_files": [
+              {
+                "package": "where-am-i",
+                "paths": [
+                  "run.mjs"
+                ],
+                "at": "/opt/where-am-i"
+              }
+            ]
+          },
+          "workdir": "/opt/where-am-i",
+          "internet": false,
+          "stdin": {
+            "fill": {
+              "from": "input"
+            }
+          },
+          "stdout": "json",
+          "argv": [
+            "node",
+            "/opt/where-am-i/run.mjs"
+          ]
+        },
+        "needs": {
+          "expected_seconds": 10,
+          "network_egress": false
+        },
+        "placements": [
+          "placement:your-computer"
+        ]
+      }
+    }
+  ]
+}

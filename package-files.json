@@ -1,0 +1,20 @@
+{
+  "tool:where-am-i": [
+    {
+      "package": "where-am-i",
+      "paths": [
+        "run.mjs"
+      ],
+      "at": "/opt/where-am-i"
+    }
+  ],
+  "tool:try-to-show-a-held-value": [
+    {
+      "package": "try-to-show-a-held-value",
+      "paths": [
+        "run.mjs"
+      ],
+      "at": "/opt/try-to-show-a-held-value"
+    }
+  ]
+}
