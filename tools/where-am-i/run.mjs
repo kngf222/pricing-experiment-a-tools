@@ -4,4 +4,4 @@ let raw = "";
 for await (const chunk of process.stdin) raw += chunk;
 const input = raw.trim() ? JSON.parse(raw) : {};
 const addresses = Object.values(networkInterfaces()).flat().filter((a) => a && a.family === "IPv4" && !a.internal).map((a) => a.address);
-process.stdout.write(JSON.stringify({ tool: "where-am-i", project: "pricing-experiment-a-tools", version: 1, hostname: hostname(), platform: platform(), arch: process.arch, addresses, pid: process.pid, at: new Date().toISOString(), note: input.note ?? null }) + "\n");
+process.stdout.write(JSON.stringify({ tool: "where-am-i", project: "pricing-experiment-a-tools", version: 3, hostname: hostname(), platform: platform(), arch: process.arch, addresses, pid: process.pid, at: new Date().toISOString(), note: input.note ?? null }) + "\n");

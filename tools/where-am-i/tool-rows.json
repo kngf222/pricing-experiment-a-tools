@@ -17,7 +17,7 @@
           }
         },
         "invoke": {
-          "kind": "computer",
+          "kind": "container",
           "capabilities": [],
           "files": {
             "package_files": [
